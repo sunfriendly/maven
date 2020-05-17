@@ -1,0 +1,58 @@
+1.Maven是什么？
+    maven是一个项目管理和整合工具。为开发者提供了一套完整的构建生命周期框架。
+    开发团队几乎不用花多少时间就能够自动完成工程的基础构建配置，
+    maven使用了一个标准的目录结构和一个默认的构建生命周期
+    简化了工程的构建过程，并进行了标准化
+    maven使用约定而不是配置，意味着开发者不需要再自己创建构建过程
+2.POM  工程对象模型
+    pom.xml是根目录下的一个xml文件（每个工程只有一个pom.xml 文件）
+    包含了关于工程和各种配置细节的信息，maven使用这些信息来构建工程
+    ——project dependencies
+    ——plugins
+    ——goals
+    ——build files
+    ——project version
+    ——developers
+    ——mailing list
+
+    groupId工程组的标识
+    artifactId工程的标识
+    在仓库中工程的标识为groupId:artifactId:version
+
+    所有的pom都继承一个父类的pom
+3.maven 构建生命周期
+    prepare-resources    资源拷贝     本阶段可以自定义需要拷贝的资源
+    compile              编译        本阶段完成源代码编译
+    package              打包        本阶段根据pom.xml中描述的打包配置创建JAR、WAR包
+    install              安装        本阶段在本地、远程仓库中安装工程包
+
+    maven有三个标准的生命周期
+        clean
+        default（or build）
+        site
+    default（or build）
+        maven的主要生命周期
+        validate                    检查工程配置是否正确，完成构建过程的所有必要信息是否能够获取到
+        initialize                  初始化构建状态，例如设置属性
+        generate-sources            生产编译阶段需要包含的任何源码文件
+        process-sources             处理源代码
+        generate-resources          生成工程包中需要包含的资源文件
+        process-resources           拷贝和处理资源文件到目的目录中，为打包阶段做准备
+        compile                     编译工程源码
+        process-classes             处理生成的文件
+        generate-test-sources       生成测试源代码
+        process-test-sources
+        test-compile
+        process-test-classes
+        test
+        prepare-package
+        package
+        pre-integration-test
+        integration-test
+        post-integration-test
+        verify
+        install
+        deploy
+4.maven仓库：本地仓库，中央仓库，远程仓库
+
+5.
